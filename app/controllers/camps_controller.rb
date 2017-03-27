@@ -1,3 +1,0 @@
-class CampsController < ApplicationController
-
-end
