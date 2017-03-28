@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328101011) do
+ActiveRecord::Schema.define(version: 20170328101358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "camp_bookings", force: :cascade do |t|
+    t.integer  "nbr_surfers"
+    t.integer  "slot_id"
+    t.integer  "camp_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["camp_id"], name: "index_camp_bookings_on_camp_id", using: :btree
+    t.index ["slot_id"], name: "index_camp_bookings_on_slot_id", using: :btree
+    t.index ["user_id"], name: "index_camp_bookings_on_user_id", using: :btree
+  end
 
   create_table "camp_reviews", force: :cascade do |t|
     t.integer  "rate"
@@ -73,6 +85,9 @@ ActiveRecord::Schema.define(version: 20170328101011) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "camp_bookings", "camps"
+  add_foreign_key "camp_bookings", "slots"
+  add_foreign_key "camp_bookings", "users"
   add_foreign_key "camp_reviews", "camps"
   add_foreign_key "camp_reviews", "users"
   add_foreign_key "camps", "organisations"
