@@ -5,5 +5,5 @@ class CampReview < ApplicationRecord
   #validations
   validates :rate, presence: true
   validates :title, presence: true
-  validates :coment, presence: true
+  validates :comment, presence: true
 end
