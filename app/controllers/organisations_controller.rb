@@ -6,8 +6,12 @@ class OrganisationsController < ApplicationController
 
   def create
     @organisation = Organisation.new(organisation_params)
-    @organisation.save
-    redirect_to organisation_path(@organisation)
+    @organisation.user = current_user
+     if @organisation.save
+      redirect_to organisation_path(@organisation)
+    else
+      render :new
+    end
   end
 
   def show

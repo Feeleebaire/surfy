@@ -1,0 +1,5 @@
+<%= simple_form_for(@organisation) do |f| %>
+  <%= f.input :name, placeholder: "Amazing surf class", label: false, :class => "form-field" %>
+  <%= f.input :address, placeholder: "76 California st, 03114 Malibu", label: false, :class => "form-field" %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
