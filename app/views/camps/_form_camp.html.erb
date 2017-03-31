@@ -1,4 +1,4 @@
-<%= simple_form_for(@camp) do |f| %>
+<%= simple_form_for(@organisation, @camp) do |f| %>
   <%= f.input :title, placeholder: "Amazing surf class", label: false, :class => "form-field" %>
   <%= f.input :description, placeholder: "76 California st, 03114 Malibu", label: false, :class => "form-field" %>
   <%= f.submit class: "btn btn-primary" %>
