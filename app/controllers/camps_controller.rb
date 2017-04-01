@@ -1,4 +1,6 @@
 class CampsController < ApplicationController
+  before_action :set_organisation, only: [:new, :create]
+
   def show
     @camp = Camp.find(params[:id])
   end
@@ -9,16 +11,22 @@ class CampsController < ApplicationController
 
   def create
     @camp = Camp.new(camp_params)
-    @camp.save
-    raise
-      redirect_to camps_path(@camp)
-
+    @camp.organisation = @organisation
+    if @camp.save
+      redirect_to organisation_camp<_path(@camp)
+    else
+      render :new
+    end
   end
 
   private
 
   def camp_params
     params.require(:camp).permit(:title, :description, :address, :language, :organisation_id)
+  end
+
+  def set_organisation
+    @organisation = Organisation.find(params[:organisation_id])
   end
 
 
