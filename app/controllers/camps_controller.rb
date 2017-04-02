@@ -5,9 +5,6 @@ class CampsController < ApplicationController
     @camp = Camp.find(params[:id])
   end
 
-  def new
-    @camp = Camp.new
-  end
 
   def create
     @camp = Camp.new(camp_params)
