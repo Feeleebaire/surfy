@@ -1,19 +1,19 @@
 class CampsController < ApplicationController
   before_action :set_organisation, only: [:new, :create]
 
-  def show
-    @camp = Camp.find(params[:id])
-  end
 
 
   def create
     @camp = Camp.new(camp_params)
     @camp.organisation = @organisation
     if @camp.save
-      redirect_to organisation_camp<_path(@camp)
+      redirect_to organisation_camp_path(@organisation, @camp)
     else
       render :new
     end
+  end
+  def show
+    @camp = Camp.find(params[:id])
   end
 
   private
