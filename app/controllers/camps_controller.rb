@@ -2,7 +2,6 @@ class CampsController < ApplicationController
   before_action :set_organisation, only: [:new, :create]
 
 
-
   def create
     @camp = Camp.new(camp_params)
     @camp.organisation = @organisation
@@ -12,6 +11,8 @@ class CampsController < ApplicationController
       render :new
     end
   end
+
+
   def show
     @camp = Camp.find(params[:id])
   end
