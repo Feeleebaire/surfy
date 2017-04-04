@@ -1,4 +1,7 @@
 <%= simple_form_for [@organisation, Camp.new] do |f| %>
   <%= f.input :title, placeholder: "Amazing surf class", label: false, :class => "form-field" %>
+    <%= f.input :description, placeholder: "Amazing surf class", label: false, :class => "form-field" %>
+    <%= f.input :address, placeholder: "address", label: false, :class => "form-field" %>
+    <%= f.input :language, collection: ["English", "French","German", "Spanish" ] %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
