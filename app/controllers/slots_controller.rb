@@ -1,7 +1,17 @@
 class SlotsController < ApplicationController
+before_action :set_camp_orga
+
+  def new
+    @slot = Slot.new
+  end
 
   def create
-    @slot = Slot.new(params)
+    @slot = Slot.new(slot_params)
+    if @slot.save
+      redirect_to organisation_camp_path(@camp)
+    else
+      render :new
+    end
   end
 
 
@@ -9,6 +19,12 @@ class SlotsController < ApplicationController
 
   def slot_params
     params.require(:slot).permit(:price, :nbr_surfers, :start_date, :end_date, :camp_id)
+  end
+
+
+  def set_camp_orga
+    @camp = Camp.find(params[:camp_id])
+    @organisation = @camp.organisation
   end
 
 end
