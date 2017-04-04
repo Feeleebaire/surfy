@@ -4,12 +4,15 @@ class CampsController < ApplicationController
     @camp = Camp.new(camp_params)
     @camp.organisation = @organisation
     if @camp.save
-      redirect_to organisation_camp_path(@organisation, @camp)
+      redirect_to camp_path(@camp)
     else
       render :new
     end
   end
 
+  def index
+    @camps = Camp.all
+  end
 
   def show
     @camp = Camp.find(params[:id])
