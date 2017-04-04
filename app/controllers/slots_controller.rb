@@ -7,8 +7,9 @@ before_action :set_camp_orga
 
   def create
     @slot = Slot.new(slot_params)
-    if @slot.save
-      redirect_to organisation_camp_path(@camp)
+    @slot.camp = @camp
+    if @slot.save!
+      redirect_to camp_path(@camp)
     else
       render :new
     end

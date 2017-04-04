@@ -1,4 +1,4 @@
-<%= simple_form_for(@slot) do |f| %>
+<%= simple_form_for [@organisation, @camp, @slot] do |f| %>
   <%= f.input :price, placeholder: "100$", label: false, :class => "form-field" %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
