@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :camp_bookings
   resources :camp_reviews
-  resources :camps, only: [:index, :show ]
+  resources :camps, only: [:index, :show]
   resources :slots, only: [:index, :show]
   get "dashboard", to: "pages#dashboard", as: :dashboard
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

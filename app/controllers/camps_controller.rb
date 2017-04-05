@@ -1,4 +1,5 @@
 class CampsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_organisation, only: [:new, :create]
   def create
     @camp = Camp.new(camp_params)
