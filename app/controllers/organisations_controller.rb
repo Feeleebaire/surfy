@@ -16,6 +16,7 @@ class OrganisationsController < ApplicationController
 
   def show
     @organisation = Organisation.find(params[:id])
+    @camps = @organisation.camps
   end
 
   def update
