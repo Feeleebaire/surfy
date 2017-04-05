@@ -3,3 +3,10 @@
 <p><%= @organisation.address %></p>
 
 <%= link_to "Créer un surfCamp",  new_organisation_camp_path(@organisation) %>
+
+
+<% @camps.each do |camp| %>
+  <p><%= camp.title %></p>
+  <p><%= camp.address %></p>
+  <p><%= link_to "Créer un slot de réservation", new_organisation_camp_slot_path(@organisation, camp) %></p>
+<% end %>
