@@ -2,15 +2,29 @@
   <div class="banner-content">
     <h1>Learn surf</h1>
     <p>Very cool stuff, useful and smart</p>
-    <form action="" method="get">
-      <input type="text" name="food_type" placeholder="What kind of food?">
+    <form action="" method="get" >
+      <input type="text" name="food_type" placeholder="What kind of food?" class= "search_bar">
          <input type="submit", class="btn btn-primary btn-lg">
     </form>
   </div>
 </div>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<% @organisations.each do |organisation| %>
-    <h2><%= organisation.name %></h2>
-<% end %>
+<div class="wrapper">
+  <div class="container">
+    <div class="text-center">
+      <h1>How it's work ?</h1>
+    </div>
+    <div class="row">
+      <% @camps.each do |camp| %>
+        <%= link_to camp_path(camp) do %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+              <div class="card-description">
+                <h2><%= camp.title %></h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
