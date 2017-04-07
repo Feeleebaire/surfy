@@ -26,7 +26,7 @@ class OrganisationsController < ApplicationController
   private
 
   def organisation_params
-    params.require(:organisation).permit(:name, :address)
+    params.require(:organisation).permit(:name, :address, :photo, :photo_cache)
   end
 
 
