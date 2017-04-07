@@ -8,8 +8,9 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @organisations = @user.organisations
+    @organisation = @user.organisation
   #@camps = @organisations.camps
+
   end
 
 end
