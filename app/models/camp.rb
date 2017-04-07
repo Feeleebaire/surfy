@@ -1,6 +1,4 @@
 class Camp < ApplicationRecord
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
   #associations
   belongs_to :organisation
   has_many :slots
@@ -8,4 +6,6 @@ class Camp < ApplicationRecord
   has_many :camp_reviews
   #validations
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end

@@ -11,6 +11,10 @@ gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
+
+gem "rails-assets-underscore", source: 'https://rails-assets.org'
 
 gem 'sass-rails'
 gem 'jquery-rails'
