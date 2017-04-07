@@ -1,2 +1,13 @@
 <h1>My Dashboard</h1>
 
+<h2>My organisations</h2>
+
+<ul><% @organisations.each do |organisation|%>
+  <li><%= organisation.name %></li>
+  <ul><% organisation.camps.each do |camp| %>
+    <li><%= camp.title %> <%= link_to "Créer un slot de réservation", new_organisation_camp_slot_path(organisation, camp) %></li>
+  <% end %></ul>
+<% end %></ul>
+
+
+

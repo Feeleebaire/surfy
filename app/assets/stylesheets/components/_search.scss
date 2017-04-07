@@ -4,8 +4,10 @@
   border-radius: 4px;
   background-color: transparent;
   text-decoration: none;
-  border: 0px, 0px, 0px, 2px;
+  color: white;
+  border: 0;
+  border-bottom: 4px solid #114c76;
 }
-.search_bar:active {
-  text-decoration: none;
+.search_bar:focus {
+  outline: none;
 }

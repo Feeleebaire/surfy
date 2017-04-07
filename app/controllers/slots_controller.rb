@@ -15,6 +15,9 @@ before_action :set_camp_orga
     end
   end
 
+  def show
+
+  end
 
   private
 
