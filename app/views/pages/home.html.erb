@@ -13,18 +13,22 @@
     <div class="text-center">
       <h1>How it's work ?</h1>
     </div>
-    <div class="row">
-      <% @camps.each do |camp| %>
-        <%= link_to camp_path(camp) do %>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-              <div class="card-description">
-                <h2><%= camp.title %></h2>
+    <% if Camp.count >= 1 %>
+      <div class="row">
+        <% @camps.each do |camp| %>
+          <%= link_to camp_path(camp) do %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+                <div class="card-description">
+                  <h2><%= camp.title %></h2>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% else %>
+     <h1> No surfCamp </h1>
+    <% end %>
   </div>
 </div>
