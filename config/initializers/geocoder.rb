@@ -1,7 +1,7 @@
 Geocoder.configure(
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
-  # lookup: :google,            # name of geocoding service (symbol)
+  lookup: :google,            # name of geocoding service (symbol)
   # language: :en,              # ISO-639 language code
   # use_https: false,           # use HTTPS for lookup requests? (if supported)
   # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
@@ -14,7 +14,8 @@ Geocoder.configure(
   # (if you want to implement custom error handling);
   # supports SocketError and Timeout::Error
   # always_raise: [],
-
+  :api_key   => ENV['GOOGLE_API_SERVER_KEY'],
+  :use_https => true,
   # Calculation options
   # distances: :linear          # :spherical or :linear
 )
