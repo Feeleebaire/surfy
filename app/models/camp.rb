@@ -1,4 +1,5 @@
 class Camp < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   #associations
   belongs_to :organisation
   has_many :slots

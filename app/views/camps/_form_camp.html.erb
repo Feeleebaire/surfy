@@ -3,5 +3,7 @@
     <%= f.input :description, placeholder: "Amazing surf class", label: false, :class => "form-field" %>
     <%= f.input :address, placeholder: "address", label: false, :class => "form-field" %>
     <%= f.input :language, collection: ["English", "French","German", "Spanish" ] %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
