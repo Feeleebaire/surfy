@@ -17,6 +17,7 @@ class CampsController < ApplicationController
 
   def show
     @camp = Camp.find(params[:id])
+    @camp = Camp.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@camp) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
