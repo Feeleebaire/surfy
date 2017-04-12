@@ -7,6 +7,6 @@ class Camp < ApplicationRecord
   has_many :camp_reviews
   #validations
 
-  #geocoded_by :address
+  geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end
