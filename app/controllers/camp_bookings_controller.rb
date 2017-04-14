@@ -24,7 +24,7 @@ class CampBookingsController < ApplicationController
   end
 
   def set_slot
-    @slot = Slot.find(params[:slot_id])
+    @slots = Slot.find(params[:slot_id])
   end
 
   def set_camp

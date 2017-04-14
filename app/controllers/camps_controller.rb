@@ -28,10 +28,7 @@ class CampsController < ApplicationController
       marker.lat camp.latitude
       marker.lng camp.longitude
     end
-    @slots = @camp.slots
-    @slot = @slots.each do |slot|
-      slot.price
-    end
+      @slots = @camp.slots
   end
 
   private
