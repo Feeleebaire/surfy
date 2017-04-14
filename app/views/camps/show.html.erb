@@ -13,7 +13,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Modal Booking-->
 <div class="modal fade" id="modalbooking_camp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -24,11 +24,7 @@
       <div class="modal-body">
         <%= simple_form_for([@organisation, @camp, @camp_booking]) do |f| %>
             <%=f.input :nbr_surfers, collection: 1..12, selected: 1, label: "For how many surfers?" %>
-            <%=f.input :slot_id, collection: @slots.each {|slot| slot.price}, selected: 1, label: "wich slot?" %>
-            <% @slots.each do |slot| %>
-            <%= f.input :slot_id, as: :radio_buttons,
-              collection: slot.price.to_a %>
-            <% end %>
+            <%=f.input :slot_id, collection: @slots.each { |slot| slot.price}, selected: 1, label: "wich slot?" %>
             <%= f.submit "Book now" , class: "btn btn-primary"%>
        <% end %>
       </div>
