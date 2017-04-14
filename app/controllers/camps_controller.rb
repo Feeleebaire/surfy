@@ -22,7 +22,7 @@ class CampsController < ApplicationController
 
   def show
     @camp = Camp.find(params[:id])
-    @camp_booking = Camp_booking.new
+    @camp_booking = CampBooking.new
     @hash = Gmaps4rails.build_markers(@camp) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
