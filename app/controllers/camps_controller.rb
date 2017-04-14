@@ -27,12 +27,10 @@ class CampsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@camp) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
     @slots = @camp.slots
     @slot = @slots.each{ |slot| slot.price}
     raise
-    #@camp_booking = Camp_booking.new
   end
 
   private
