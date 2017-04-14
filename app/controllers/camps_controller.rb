@@ -29,8 +29,9 @@ class CampsController < ApplicationController
       marker.lng camp.longitude
     end
     @slots = @camp.slots
-    @slot = @slots.each{ |slot| slot.price}
-    raise
+    @slot = @slots.each do |slot|
+      slot.price
+    end
   end
 
   private

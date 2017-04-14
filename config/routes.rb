@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard", as: :dashboard
   resources :organisations do
     resources :camps , only: [:new, :create, :destroy, :edit, :update] do
-      resources :slots, only: [:new, :create, :destroy, :edit, :update]
-      resources :camp_bookings, only: [:new, :create]
+      resources :slots, only: [:new, :create, :destroy, :edit, :update] do
+        resources :camp_bookings, only: [:new, :create]
+      end
     end
   end
   resources :camp_reviews
