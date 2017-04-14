@@ -1,12 +1,12 @@
 class CampBookingsController < ApplicationController
   before_action :set_camp, only: [:new, :create]
-  before_action :set_slot, only: [:new, :create]
+  #before_action :set_slot, only: [:new, :create]
 
 
   def create
     @camp_booking = CampBooking.new(camp_booking_params)
     @camp_booking.camp = @camp
-    @camp_booking.slot = @slot
+    #@camp_booking.slot = @slot
     @user = current_user
     @camp_booking.user = @user
     if @camp_booking.save!
