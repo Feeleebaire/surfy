@@ -11,6 +11,7 @@
   </button>
   </div>
 </div>
+div.con
 
 
 <!-- Modal Booking-->
@@ -24,7 +25,7 @@
       <div class="modal-body">
         <%= simple_form_for([@organisation, @camp, @camp_booking]) do |f| %>
             <%=f.input :nbr_surfers, collection: 1..12, selected: 1, label: "For how many surfers?" %>
-              <%=f.input :slot_id, as: :radio_buttons, collection: @slots.each{ |slot| [] << slot.price} %>
+              <%=f.input :slot_id, as: :radio_buttons, collection: @slots.each{ |slot| slot.price} %>
             <%= f.submit "Book now" , class: "btn btn-primary"%>
        <% end %>
       </div>
