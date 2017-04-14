@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources :organisations do
     resources :camps , only: [:new, :create, :destroy, :edit, :update] do
       resources :slots, only: [:new, :create, :destroy, :edit, :update]
+      resources :camp_bookings, only: [:new, :create]
     end
   end
-  resources :camp_bookings
   resources :camp_reviews
   resources :camps, only: [:index, :show]
   resources :slots, only: [:index, :show]

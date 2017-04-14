@@ -1,6 +1,6 @@
 class CampBookingsController < ApplicationController
   before_action :set_camp, only: [:new, :create]
-  #before_action :set_slot, only: [:new, :create]
+  before_action :set_slot, only: [:new, :create]
 
 
   def create
