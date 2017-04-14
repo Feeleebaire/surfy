@@ -1,0 +1,2 @@
+module CampBookingsHelper
+end

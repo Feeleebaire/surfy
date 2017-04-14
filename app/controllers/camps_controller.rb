@@ -27,6 +27,7 @@ class CampsController < ApplicationController
       marker.lng camp.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
+    @camp_booking = Camp_booking.new
   end
 
   private

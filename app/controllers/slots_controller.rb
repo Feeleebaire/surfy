@@ -1,7 +1,5 @@
 class SlotsController < ApplicationController
 before_action :set_camp_orga
-before_action :set_organisation, only: [:new, :create]
-
   def new
     @slot = Slot.new
   end
