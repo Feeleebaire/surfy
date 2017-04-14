@@ -3,12 +3,11 @@
     <h1><%= @camp.title %></h1>
     <p><%= @camp.address %></p>
     <ul><% @camp.slots.each do |slot| %>
-    <li><%= slot.price %></li>
-    <% end %>
-    </ul>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalbooking_camp">
+    <li><%= slot.price %></li> <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalbooking_camp">
   Book this camp
 </button>
+    <% end %>
+    </ul>
   </div>
 </div>
 <!-- Modal -->
@@ -20,7 +19,11 @@
         <h4 class="modal-title" id="myModalLabel">Book <%= @camp.title %></h4>
       </div>
       <div class="modal-body">
-        ...
+        <%= simple_form_for([@camp, @camp_booking]) do |f| %>
+            <%=f.input :nbr_surfers, collection: 1..12, selected: 1, label: "For how many surfers?" %>
+            <%=f.input :slot_id, collection: @camp.slots, selected: 1, label: "For how many surfers?" %>
+            <%= f.submit "Book now" , class: "btn btn-primary"%>
+       <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
