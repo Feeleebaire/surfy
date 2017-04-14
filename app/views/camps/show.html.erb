@@ -2,16 +2,20 @@
   <div class="banner-content">
     <h1><%= @camp.title %></h1>
     <p><%= @camp.address %></p>
-    <ul><% @camp.slots.each do |slot| %>
-    <li><%= slot.price %></li>
-    <% end %>
-    </ul>
+
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalbooking_camp">
    Book this camp
   </button>
   </div>
 </div>
-div.con
+<div class="container">
+  <div class="wrapper">
+    <ul><% @camp.slots.each do |slot| %>
+    <li><%= slot.price %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
 
 
 <!-- Modal Booking-->
@@ -25,7 +29,7 @@ div.con
       <div class="modal-body">
         <%= simple_form_for([@organisation, @camp, @camp_booking]) do |f| %>
             <%=f.input :nbr_surfers, collection: 1..12, selected: 1, label: "For how many surfers?" %>
-              <%=f.input :slot_id, as: :radio_buttons, collection: @slots.each{ |slot| slot.price} %>
+              <%=f.input :slot_id, as: :radio_buttons, collection: @camp.slots %>
             <%= f.submit "Book now" , class: "btn btn-primary"%>
        <% end %>
       </div>
