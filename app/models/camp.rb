@@ -1,4 +1,5 @@
 class Camp < ApplicationRecord
+  include AlgoliaSearch
   mount_uploader :photo, PhotoUploader
   #associations
   belongs_to :organisation
