@@ -13,7 +13,7 @@ class CampsController < ApplicationController
 
   def index
     @camps = Camp.where.not(latitude: nil, longitude: nil)
-    hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
+    @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
     end
